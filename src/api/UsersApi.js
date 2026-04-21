@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import Error from '../model/Error';
 import UserGet200Response from '../model/UserGet200Response';
 import UserUsageGet200Response from '../model/UserUsageGet200Response';
 

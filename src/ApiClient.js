@@ -13,6 +13,7 @@
 
 
 import superagent from "superagent";
+import NitrozenError from './NitrozenError';
 
 /**
 * @module ApiClient
@@ -487,8 +488,8 @@ class ApiClient {
             }
         }
 
-        request.end((error, response) => {
-            if (callback) {
+        if (callback) {
+            request.end((error, response) => {
                 var data = null;
                 if (!error) {
                     try {
@@ -500,12 +501,31 @@ class ApiClient {
                         error = err;
                     }
                 }
-
                 callback(error, data, response);
-            }
-        });
+            });
+            return request;
+        }
 
-        return request;
+        return new Promise((resolve, reject) => {
+            request.end((error, response) => {
+                if (error) {
+                    const statusCode = response ? response.status : null;
+                    const body = response ? response.body : null;
+                    const message = (body && body.message) || error.message || 'Request failed';
+                    const errors = (body && body.errors) || null;
+                    return reject(new NitrozenError(message, statusCode, errors));
+                }
+                try {
+                    const data = this.deserialize(response, returnType);
+                    if (this.enableCookies && typeof window === 'undefined'){
+                        this.agent._saveCookies(response);
+                    }
+                    resolve(data);
+                } catch (err) {
+                    reject(new NitrozenError(err.message, null, null));
+                }
+            });
+        });
     }
 
     /**
@@ -684,6 +704,17 @@ ApiClient.CollectionFormatEnum = {
      * @const
      */
     MULTI: 'multi'
+};
+
+/**
+ * Creates a pre-configured ApiClient with the given bearer token.
+ * @param {String|Function} accessToken Static token string or a function that returns one.
+ * @returns {ApiClient}
+ */
+ApiClient.create = function(accessToken) {
+    const client = new ApiClient();
+    client.authentications['BearerAuth'].accessToken = accessToken;
+    return client;
 };
 
 /**

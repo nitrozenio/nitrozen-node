@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import Error from '../model/Error';
 import TokensGet200Response from '../model/TokensGet200Response';
 import TokensPost201Response from '../model/TokensPost201Response';
 import TokensPostRequest from '../model/TokensPostRequest';

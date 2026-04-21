@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import Error from '../model/Error';
 import PublicProjectsSlugEntriesGet200Response from '../model/PublicProjectsSlugEntriesGet200Response';
 
 /**

@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import EntryInput from '../model/EntryInput';
-import Error from '../model/Error';
 import ProjectsProjectEntriesGet200Response from '../model/ProjectsProjectEntriesGet200Response';
 import ProjectsProjectEntriesPost201Response from '../model/ProjectsProjectEntriesPost201Response';
 import ValidationError from '../model/ValidationError';

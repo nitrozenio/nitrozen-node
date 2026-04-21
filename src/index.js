@@ -13,6 +13,7 @@
 
 
 import ApiClient from './ApiClient';
+import NitrozenError from './NitrozenError';
 import Entry from './model/Entry';
 import EntryInput from './model/EntryInput';
 import Error from './model/Error';
@@ -80,6 +81,12 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The NitrozenError class.
+     * @property {module:NitrozenError}
+     */
+    NitrozenError,
 
     /**
      * The Entry model constructor.
