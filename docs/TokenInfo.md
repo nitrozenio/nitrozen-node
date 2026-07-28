@@ -1,4 +1,4 @@
-# NitrozenApi.TokenInfo
+# Nitrozenio.TokenInfo
 
 ## Properties
 

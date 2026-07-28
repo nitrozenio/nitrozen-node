@@ -1,4 +1,4 @@
-# NitrozenApi.User
+# Nitrozenio.User
 
 ## Properties
 

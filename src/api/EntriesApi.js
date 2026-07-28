@@ -201,7 +201,7 @@ export default class EntriesApi {
      * Returns entries for a project with optional filtering and pagination.
      * @param {Number} project Project ID
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} [category] Filter by category
+     * @param {String} [category] Filter by category slug. Every project has the built-in categories `new`, `improvement`, `fix`, and `announcement`; projects on plans with custom categories enabled may also have additional project-specific slugs. 
      * @param {module:model/String} [status] Filter by publish status
      * @param {Number} [page = 1)] Page number
      * @param {Number} [perPage = 15)] Items per page

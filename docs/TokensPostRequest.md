@@ -1,4 +1,4 @@
-# NitrozenApi.TokensPostRequest
+# Nitrozenio.TokensPostRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# NitrozenApi.AuthenticationApi
+# Nitrozenio.AuthenticationApi
 
 All URIs are relative to *https://nitrozen.io/api/v1*
 
@@ -21,13 +21,13 @@ Returns all API tokens for the authenticated user. Token values are not included
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.AuthenticationApi();
+let apiInstance = new Nitrozenio.AuthenticationApi();
 apiInstance.tokensGet((error, data, response) => {
   if (error) {
     console.error(error);
@@ -66,13 +66,13 @@ Creates a new API token. The plain-text token is only returned in this response 
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.AuthenticationApi();
+let apiInstance = new Nitrozenio.AuthenticationApi();
 let tokensPostRequest = {"name":"CI/CD Pipeline"}; // TokensPostRequest | 
 apiInstance.tokensPost(tokensPostRequest, (error, data, response) => {
   if (error) {
@@ -115,13 +115,13 @@ Permanently revokes an API token. Any requests using this token will be rejected
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.AuthenticationApi();
+let apiInstance = new Nitrozenio.AuthenticationApi();
 let token = 56; // Number | Token ID
 apiInstance.tokensTokenDelete(token, (error, data, response) => {
   if (error) {

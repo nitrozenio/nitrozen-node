@@ -1,4 +1,4 @@
-# NitrozenApi.ProjectsProjectEntriesPost201Response
+# Nitrozenio.ProjectsProjectEntriesPost201Response
 
 ## Properties
 

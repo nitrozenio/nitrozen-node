@@ -1,4 +1,4 @@
-# NitrozenApi.Error
+# Nitrozenio.Error
 
 ## Properties
 

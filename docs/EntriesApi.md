@@ -1,4 +1,4 @@
-# NitrozenApi.EntriesApi
+# Nitrozenio.EntriesApi
 
 All URIs are relative to *https://nitrozen.io/api/v1*
 
@@ -23,13 +23,13 @@ Permanently deletes a changelog entry.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.EntriesApi();
+let apiInstance = new Nitrozenio.EntriesApi();
 let project = 56; // Number | Project ID
 let entry = 56; // Number | Entry ID
 apiInstance.projectsProjectEntriesEntryDelete(project, entry, (error, data, response) => {
@@ -74,13 +74,13 @@ Returns a single entry by ID.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.EntriesApi();
+let apiInstance = new Nitrozenio.EntriesApi();
 let project = 56; // Number | Project ID
 let entry = 56; // Number | Entry ID
 apiInstance.projectsProjectEntriesEntryGet(project, entry, (error, data, response) => {
@@ -125,16 +125,16 @@ Updates an existing changelog entry.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.EntriesApi();
+let apiInstance = new Nitrozenio.EntriesApi();
 let project = 56; // Number | Project ID
 let entry = 56; // Number | Entry ID
-let entryInput = new NitrozenApi.EntryInput(); // EntryInput | 
+let entryInput = new Nitrozenio.EntryInput(); // EntryInput | 
 apiInstance.projectsProjectEntriesEntryPut(project, entry, entryInput, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -178,16 +178,16 @@ Returns entries for a project with optional filtering and pagination.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.EntriesApi();
+let apiInstance = new Nitrozenio.EntriesApi();
 let project = 56; // Number | Project ID
 let opts = {
-  'category': "category_example", // String | Filter by category
+  'category': "category_example", // String | Filter by category slug. Every project has the built-in categories `new`, `improvement`, `fix`, and `announcement`; projects on plans with custom categories enabled may also have additional project-specific slugs. 
   'status': "status_example", // String | Filter by publish status
   'page': 1, // Number | Page number
   'perPage': 15 // Number | Items per page
@@ -207,7 +207,7 @@ apiInstance.projectsProjectEntriesGet(project, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project** | **Number**| Project ID | 
- **category** | **String**| Filter by category | [optional] 
+ **category** | **String**| Filter by category slug. Every project has the built-in categories &#x60;new&#x60;, &#x60;improvement&#x60;, &#x60;fix&#x60;, and &#x60;announcement&#x60;; projects on plans with custom categories enabled may also have additional project-specific slugs.  | [optional] 
  **status** | **String**| Filter by publish status | [optional] 
  **page** | **Number**| Page number | [optional] [default to 1]
  **perPage** | **Number**| Items per page | [optional] [default to 15]
@@ -237,13 +237,13 @@ Creates a new changelog entry. Set &#x60;is_published&#x60; to &#x60;true&#x60; 
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.EntriesApi();
+let apiInstance = new Nitrozenio.EntriesApi();
 let project = 56; // Number | Project ID
 let entryInput = {"title":"Dark mode support","content":"We've added dark mode across the entire application.","category":"new","is_published":true}; // EntryInput | 
 apiInstance.projectsProjectEntriesPost(project, entryInput, (error, data, response) => {

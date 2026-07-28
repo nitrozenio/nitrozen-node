@@ -1,4 +1,4 @@
-# NitrozenApi.PaginationMeta
+# Nitrozenio.PaginationMeta
 
 ## Properties
 

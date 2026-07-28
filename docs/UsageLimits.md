@@ -1,4 +1,4 @@
-# NitrozenApi.UsageLimits
+# Nitrozenio.UsageLimits
 
 ## Properties
 

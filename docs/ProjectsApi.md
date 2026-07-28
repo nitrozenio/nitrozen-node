@@ -1,4 +1,4 @@
-# NitrozenApi.ProjectsApi
+# Nitrozenio.ProjectsApi
 
 All URIs are relative to *https://nitrozen.io/api/v1*
 
@@ -23,13 +23,13 @@ Returns all projects owned by the authenticated user.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.ProjectsApi();
+let apiInstance = new Nitrozenio.ProjectsApi();
 apiInstance.projectsGet((error, data, response) => {
   if (error) {
     console.error(error);
@@ -68,13 +68,13 @@ Creates a new changelog project. The slug is auto-generated from the name.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.ProjectsApi();
+let apiInstance = new Nitrozenio.ProjectsApi();
 let projectInput = {"name":"My Product","description":"Changelog for My Product"}; // ProjectInput | 
 apiInstance.projectsPost(projectInput, (error, data, response) => {
   if (error) {
@@ -117,13 +117,13 @@ Permanently deletes a project and all its entries.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.ProjectsApi();
+let apiInstance = new Nitrozenio.ProjectsApi();
 let project = 56; // Number | Project ID
 apiInstance.projectsProjectDelete(project, (error, data, response) => {
   if (error) {
@@ -166,13 +166,13 @@ Returns a single project by ID.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.ProjectsApi();
+let apiInstance = new Nitrozenio.ProjectsApi();
 let project = 56; // Number | Project ID
 apiInstance.projectsProjectGet(project, (error, data, response) => {
   if (error) {
@@ -215,15 +215,15 @@ Updates an existing project&#39;s name and description.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.ProjectsApi();
+let apiInstance = new Nitrozenio.ProjectsApi();
 let project = 56; // Number | Project ID
-let projectInput = new NitrozenApi.ProjectInput(); // ProjectInput | 
+let projectInput = new Nitrozenio.ProjectInput(); // ProjectInput | 
 apiInstance.projectsProjectPut(project, projectInput, (error, data, response) => {
   if (error) {
     console.error(error);

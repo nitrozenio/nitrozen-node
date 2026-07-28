@@ -1,4 +1,4 @@
-# NitrozenApi.TokensGet200Response
+# Nitrozenio.TokensGet200Response
 
 ## Properties
 

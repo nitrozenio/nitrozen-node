@@ -13,45 +13,36 @@ export class Entry {
   id?: number;
   title?: string;
   content?: string;
-  category?: Entry.CategoryEnum;
+  /**
+   * The entry's category slug. Every project has the built-in categories
+   * 'new', 'improvement', 'fix', and 'announcement'; projects with custom
+   * categories enabled may also have additional project-specific slugs.
+   */
+  category?: string;
   is_published?: boolean;
   published_at?: Date;
   created_at?: Date;
   updated_at?: Date;
   static constructFromObject(data: any, obj?: Entry): Entry;
   static validateJSON(data: any): boolean;
-  static CategoryEnum: {
-    readonly new: 'new';
-    readonly improvement: 'improvement';
-    readonly fix: 'fix';
-    readonly announcement: 'announcement';
-  };
-}
-
-export namespace Entry {
-  type CategoryEnum = 'new' | 'improvement' | 'fix' | 'announcement';
 }
 
 export class EntryInput {
   title: string;
   content: string;
-  category: EntryInput.CategoryEnum;
+  /**
+   * The category slug to file this entry under. Every project has the
+   * built-in categories 'new', 'improvement', 'fix', and 'announcement';
+   * projects with custom categories enabled may also have additional
+   * project-specific slugs.
+   */
+  category: string;
   is_published?: boolean;
   published_at?: Date;
-  constructor(title: string, content: string, category: EntryInput.CategoryEnum);
+  constructor(title: string, content: string, category: string);
   static constructFromObject(data: any, obj?: EntryInput): EntryInput;
   static validateJSON(data: any): boolean;
   static RequiredProperties: string[];
-  static CategoryEnum: {
-    readonly new: 'new';
-    readonly improvement: 'improvement';
-    readonly fix: 'fix';
-    readonly announcement: 'announcement';
-  };
-}
-
-export namespace EntryInput {
-  type CategoryEnum = 'new' | 'improvement' | 'fix' | 'announcement';
 }
 
 export class Project {
@@ -304,7 +295,7 @@ export class AuthenticationApi {
 }
 
 export interface ListEntriesOpts {
-  category?: Entry.CategoryEnum;
+  category?: string;
   status?: 'published' | 'draft';
   page?: number;
   perPage?: number;

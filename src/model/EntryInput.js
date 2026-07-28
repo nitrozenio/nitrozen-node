@@ -24,7 +24,7 @@ class EntryInput {
      * @alias module:model/EntryInput
      * @param title {String} 
      * @param content {String} 
-     * @param category {module:model/EntryInput.CategoryEnum} 
+     * @param category {String} The category slug to file this entry under. Every project has the built-in categories `new`, `improvement`, `fix`, and `announcement`; projects on plans with custom categories enabled may also define additional project-specific slugs (see the project's dashboard for the full list). 
      */
     constructor(title, content, category) { 
         
@@ -117,7 +117,8 @@ EntryInput.prototype['title'] = undefined;
 EntryInput.prototype['content'] = undefined;
 
 /**
- * @member {module:model/EntryInput.CategoryEnum} category
+ * The category slug to file this entry under. Every project has the built-in categories `new`, `improvement`, `fix`, and `announcement`; projects on plans with custom categories enabled may also define additional project-specific slugs (see the project's dashboard for the full list). 
+ * @member {String} category
  */
 EntryInput.prototype['category'] = undefined;
 
@@ -135,39 +136,6 @@ EntryInput.prototype['published_at'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>category</code> property.
- * @enum {String}
- * @readonly
- */
-EntryInput['CategoryEnum'] = {
-
-    /**
-     * value: "new"
-     * @const
-     */
-    "new": "new",
-
-    /**
-     * value: "improvement"
-     * @const
-     */
-    "improvement": "improvement",
-
-    /**
-     * value: "fix"
-     * @const
-     */
-    "fix": "fix",
-
-    /**
-     * value: "announcement"
-     * @const
-     */
-    "announcement": "announcement"
-};
 
 
 

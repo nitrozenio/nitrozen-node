@@ -21,3 +21,27 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Hand-customized files — regeneration must not overwrite these.
+README.md
+package.json
+CHANGELOG.md
+.babelrc
+.mocharc.yml
+.gitignore
+.github/workflows/ci.yml
+test-sdk.mjs
+test/
+types/
+
+# src/ApiClient.js and src/index.js carry hand-written functionality no known
+# generator flag reproduces: dual callback/Promise support in callApi(), the
+# NitrozenError wrapping class, and the ApiClient.create(token) factory.
+src/ApiClient.js
+src/index.js
+
+# Dead boilerplate this project doesn't use (real CI is .github/workflows/ci.yml,
+# real mocha config is .mocharc.yml) — don't let the generator recreate these.
+.travis.yml
+git_push.sh
+mocha.opts

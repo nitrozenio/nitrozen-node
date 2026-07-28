@@ -118,7 +118,8 @@ Entry.prototype['title'] = undefined;
 Entry.prototype['content'] = undefined;
 
 /**
- * @member {module:model/Entry.CategoryEnum} category
+ * The entry's category slug. Every project has the built-in categories `new`, `improvement`, `fix`, and `announcement`; projects on plans with custom categories enabled may also define additional project-specific slugs. 
+ * @member {String} category
  */
 Entry.prototype['category'] = undefined;
 
@@ -144,39 +145,6 @@ Entry.prototype['updated_at'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>category</code> property.
- * @enum {String}
- * @readonly
- */
-Entry['CategoryEnum'] = {
-
-    /**
-     * value: "new"
-     * @const
-     */
-    "new": "new",
-
-    /**
-     * value: "improvement"
-     * @const
-     */
-    "improvement": "improvement",
-
-    /**
-     * value: "fix"
-     * @const
-     */
-    "fix": "fix",
-
-    /**
-     * value: "announcement"
-     * @const
-     */
-    "announcement": "announcement"
-};
 
 
 

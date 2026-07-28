@@ -1,4 +1,4 @@
-# NitrozenApi.ProjectInput
+# Nitrozenio.ProjectInput
 
 ## Properties
 

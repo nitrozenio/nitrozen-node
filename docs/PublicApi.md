@@ -1,4 +1,4 @@
-# NitrozenApi.PublicApi
+# Nitrozenio.PublicApi
 
 All URIs are relative to *https://nitrozen.io/api/v1*
 
@@ -19,9 +19,9 @@ Returns all published entries for a project. No authentication required.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
+import Nitrozenio from 'nitrozenio';
 
-let apiInstance = new NitrozenApi.PublicApi();
+let apiInstance = new Nitrozenio.PublicApi();
 let slug = "slug_example"; // String | Project slug
 apiInstance.publicProjectsSlugEntriesGet(slug, (error, data, response) => {
   if (error) {

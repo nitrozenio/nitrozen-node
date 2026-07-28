@@ -1,4 +1,4 @@
-# NitrozenApi.ValidationError
+# Nitrozenio.ValidationError
 
 ## Properties
 

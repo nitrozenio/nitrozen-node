@@ -1,4 +1,4 @@
-# NitrozenApi.UsersApi
+# Nitrozenio.UsersApi
 
 All URIs are relative to *https://nitrozen.io/api/v1*
 
@@ -20,13 +20,13 @@ Returns the authenticated user&#39;s profile and plan details.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.UsersApi();
+let apiInstance = new Nitrozenio.UsersApi();
 apiInstance.userGet((error, data, response) => {
   if (error) {
     console.error(error);
@@ -65,13 +65,13 @@ Returns current usage counts and plan limits.
 ### Example
 
 ```javascript
-import NitrozenApi from 'nitrozen_api';
-let defaultClient = NitrozenApi.ApiClient.instance;
+import Nitrozenio from 'nitrozenio';
+let defaultClient = Nitrozenio.ApiClient.instance;
 // Configure Bearer access token for authorization: BearerAuth
 let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new NitrozenApi.UsersApi();
+let apiInstance = new Nitrozenio.UsersApi();
 apiInstance.userUsageGet((error, data, response) => {
   if (error) {
     console.error(error);

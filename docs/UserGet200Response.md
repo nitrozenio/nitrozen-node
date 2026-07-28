@@ -1,4 +1,4 @@
-# NitrozenApi.UserGet200Response
+# Nitrozenio.UserGet200Response
 
 ## Properties
 
