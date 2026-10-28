@@ -49,6 +49,8 @@ export class Project {
   id?: number;
   name?: string;
   slug?: string;
+  /** Public changelog page URL (verified custom domain, or https://nitrozen.io/c/<slug>). Read-only. */
+  readonly public_url?: string;
   description?: string;
   custom_domain?: string;
   domain_verification_status?: Project.DomainVerificationStatusEnum;

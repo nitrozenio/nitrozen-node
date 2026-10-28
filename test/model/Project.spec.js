@@ -72,6 +72,16 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property publicUrl (base name: "public_url")', function() {
+      var instance = NitrozenApi.Project.constructFromObject({
+        id: 1,
+        slug: 'textproxyz',
+        public_url: 'https://nitrozen.io/c/textproxyz'
+      });
+      expect(instance.public_url).to.be('https://nitrozen.io/c/textproxyz');
+      expect(NitrozenApi.Project.validateJSON({public_url: 'https://nitrozen.io/c/textproxyz'})).to.be(true);
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instance = new NitrozenApi.Project();
