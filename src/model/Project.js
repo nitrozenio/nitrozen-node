@@ -56,6 +56,9 @@ class Project {
             if (data.hasOwnProperty('slug')) {
                 obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
             }
+            if (data.hasOwnProperty('public_url')) {
+                obj['public_url'] = ApiClient.convertToType(data['public_url'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -93,6 +96,10 @@ class Project {
             throw new Error("Expected the field `slug` to be a primitive type in the JSON string but got " + data['slug']);
         }
         // ensure the json data is a string
+        if (data['public_url'] && !(typeof data['public_url'] === 'string' || data['public_url'] instanceof String)) {
+            throw new Error("Expected the field `public_url` to be a primitive type in the JSON string but got " + data['public_url']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -127,6 +134,12 @@ Project.prototype['name'] = undefined;
  * @member {String} slug
  */
 Project.prototype['slug'] = undefined;
+
+/**
+ * Public changelog page URL. `https://<custom_domain>` when the project's custom domain is verified, otherwise `https://nitrozen.io/c/<slug>`. Read-only; ignored on create and update.
+ * @member {String} public_url
+ */
+Project.prototype['public_url'] = undefined;
 
 /**
  * @member {String} description
